@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:html5="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Registro</title>
+        <meta name="description" content="Sufee Admin - HTML5 Admin Template"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="icon" type="image/x-icon" href="../images/logo (1).svg"/>
+        <link rel="apple-touch-icon" href="apple-icon.png"/>
+        <link rel="shortcut icon" href="favicon.ico"/>
+        <link rel="stylesheet" href="../vendors/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../vendors/font-awesome/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="../vendors/themify-icons/css/themify-icons.css"/>
+        <link rel="stylesheet" href="../vendors/flag-icon-css/css/flag-icon.min.css"/>
+        <link rel="stylesheet" href="../vendors/selectFX/css/cs-skin-elastic.css"/>
+        <link rel="stylesheet" href="../assets/css/style.css"/>
+
+        <style type="text/css">
+            body {
+                background-image: url(../images/login.jpg)
+            }
+        </style>
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'/>
+    </h:head>
+    <h:body class="bg-dark">
+        <div class="sufee-login d-flex align-content-center flex-wrap">
+            <div class="container">
+                <div class="login-content">
+                    <div class="login-form">
+                        <h:form>
+                            <div class="login-logo">
+                                <a href="../index.xhtml">
+                                    <img class="align-content" src="../images/logo (1).svg" alt="" height="100" width="100"/>
+                                </a>
+                            </div>
+                            <hr></hr>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Nombres</label>
+                                    <h:inputText required="true" requiredMessage="Ingrese sus nombres" id="regNombres" value="#{registroUsuarioRequest.usReg.nombres}" class="form-control" html5:placeholder="Nombres"/>
+                                    <h:message style="color: red" for="regNombres"></h:message>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Apellidos</label>
+                                    <h:inputText required="true" requiredMessage="Ingrese sus apellidos" id="regApellidos" value="#{registroUsuarioRequest.usReg.apellidos}" class="form-control" html5:placeholder="Nombres"/>
+                                    <h:message style="color: red" for="regApellidos"></h:message>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Dirección de correo electrónico</label>
+                                    <h:inputText required="true"  requiredMessage="Ingrese un correo" id="regCorreo" value="#{registroUsuarioRequest.usReg.correoElectronico}" class="form-control" html5:placeholder="Correo electrónico"/>
+                                    <h:message style="color: red" for="regCorreo"></h:message>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h:outputLabel for="tipoIn"> Tipo de documento</h:outputLabel>    
+                                <h:selectOneMenu value="#{registroUsuarioRequest.usReg.tipoDocumento}" id="tipoIn" >
+                                    <f:selectItem itemLabel="Cedula" itemValue="Cedula"></f:selectItem>
+                                    <f:selectItem itemLabel="Cedula Ex" itemValue="Cedula EX"></f:selectItem>
+                                </h:selectOneMenu>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="validationTooltip02">Fecha de nacimiento</label>
+                                <input type="date" id="start" name="trip-start"
+                                       value="1970-01-01"
+                                       min="1970-01-01" max="2025-12-31">
+                                </input>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Documento</label>
+                                    <h:inputText required="true"  requiredMessage="Ingrese un documento" id="regDocumento" value="#{registroUsuarioRequest.usReg.documento}" class="form-control" html5:placeholder="Documento"/>
+                                    <h:message style="color: red" for="regDocumento"></h:message>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Ciudad</label>
+                                    <h:inputText required="true" requiredMessage="Ingrese su ciudad" id="regCiudad" value="#{registroUsuarioRequest.usReg.ciudad}" class="form-control" html5:placeholder="Ciudad"/>
+                                    <h:message style="color: red" for="regCiudad"></h:message>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Dirección</label>
+                                    <h:inputText required="true" requiredMessage="Ingrese su dirección" id="regDirección" value="#{registroUsuarioRequest.usReg.direccion}" class="form-control" html5:placeholder="Dirección"/>
+                                    <h:message style="color: red" for="regDirección"></h:message>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Genero</label>
+                                    <h:inputText required="true" requiredMessage="Ingrese su orientación" id="regGenero" value="#{registroUsuarioRequest.usReg.genero}" class="form-control" html5:placeholder="Genero"/>
+                                    <h:message style="color: red" for="regGenero"></h:message>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Contraseña</label>
+                                    <h:inputSecret required="true" requiredMessage="Ingrese una clave" id="regContraseña"  value="#{registroUsuarioRequest.usReg.contrasenia}" class="form-control" html5:placeholder="Contraseña"/>
+                                    <h:message style="color: red" for="regContraseña"></h:message>
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"/> Al registrarte, aceptas nuestras condiciones de uso Politica de privacidad.
+                                </label>
+                            </div>
+                            <h:commandButton action="#{registroUsuarioRequest.crearUsuario()}"  class="btn btn-danger btn-flat m-b-30 m-t-30" value="Registrate"/>
+                            <div class="social-login-content">
+                            </div>
+                            <div class="register-link m-t-15 text-center">
+                                <p>¿Ya tienes cuenta? <a href="../index.xhtml"> Iniciar sesión</a></p>
+                            </div>
+                            <div class="register-link m-t-15 text-center">
+                                <p>Volver al inicio<a href="../InterfazPrincipal/about.html"> Inicio</a></p>
+                            </div>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="vendors/jquery/dist/jquery.min.js"></script>
+        <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+        <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../assets/js/main.js"></script>
+    </h:body>
+</html>
